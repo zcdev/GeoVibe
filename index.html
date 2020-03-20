@@ -5,20 +5,31 @@
     <meta charset="utf-8">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="pragma" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoVibe</title>
-    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
     <div class="container">
+
         <h1>GeoVibe</h1>
-        <p>Getting a sense of people around you</p>
-        <p id="locate"></p>
-        <p id="gender"></p>
-        <p id="race"></p>
+        <p id="slogan">Getting a sense of the people around you.</p>
+        <div id="data">
+        <p>Enter your zipcode:</p>
+        <input type="text" id="newzip">
+        <button type="button" id="submit">Submit</button>
+        <p>Taking a pulse... <span id="city"></span> <span id="state"></span><span id="locate"></span></p>
+        <p id="people"></p>
+        <div id="gender"></div>
+        <p id="age"></p>
+        <p id="income"></p>
+        <div id="cover"></div>
+        </div>
+        <div id="chartContainer"></div>
+        <img src="people.png" width="100%">
     </div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src='config.js'></script>
     <script src="app.js"></script>
