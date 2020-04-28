@@ -47,7 +47,6 @@ function getData() {
 			dataPoints.push(obj);
 		});
 
-		console.log(dataPoints)
 		CanvasJS.addColorSet("shades",
 			[//colorSet Array
 			"#5f4090",
@@ -73,7 +72,7 @@ function getData() {
 
 	})).catch(errors => {
 	  alert("Not found. Try again.")
-	})
+	});
 }
 
 document.getElementById('submit').addEventListener("click", function(){
