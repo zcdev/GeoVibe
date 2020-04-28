@@ -24,7 +24,7 @@ function getData() {
 	axios.all([requestOne, requestTwo, requestThree]).then(axios.spread((...responses) => {
 		const responseOne = responses[0].data.results
 		const responseTwo = responses[1].data.results
-		const responesThree = responses[2].data.results
+		const responseThree = responses[2].data.results
 	  	
 	  	// Demographic
 		city.innerText = "You are near: " + responseOne.city + ",";
@@ -36,15 +36,15 @@ function getData() {
 		// Gender
 		gender.innerHTML = `<p>Male: <span>${responseTwo.malePercentage}%</span></p><p>Female: <span>${responseTwo.femalePercentage}%</span></p>`;
 		// Diversity
-		races = { White: responesThree.whitePercentage, Black: responesThree.blackPercentage, Asian: responesThree.asianPercentage, Hawaiian: responesThree.hawaiianPercentage, Indian: responesThree.indianPercentage, Other: responesThree.otherPercentage};
+		races = { White: responseThree.whitePercentage, Black: responseThree.blackPercentage, Asian: responseThree.asianPercentage, Hawaiian: responseThree.hawaiianPercentage, Indian: responseThree.indianPercentage, Other: responseThree.otherPercentage};
 		dataPoints = [];
 		Object.keys(races).sort((a, b) => {
 			return races[b] - races[a] 
 		}).forEach(function(value, index) {
-		let obj = {};
-		obj["y"] = races[value];
-		obj["label"] = value;
-		dataPoints.push(obj);
+			let obj = {};
+			obj["y"] = races[value];
+			obj["label"] = value;
+			dataPoints.push(obj);
 		});
 
 		console.log(dataPoints)
